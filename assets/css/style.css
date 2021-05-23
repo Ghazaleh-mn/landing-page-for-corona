@@ -57,7 +57,7 @@ body {
 .slider{
   margin-top: 60px;
 }
-.mySlides {
+.mainSlider{
   display: none;
   text-align: center;
   width: 100%;
@@ -65,10 +65,6 @@ body {
   background-color: white;
 }
 .slider-img{
-  width: 50%;
-  height: 500px;
-}
-.slider-img-word{
   width: 50%;
   height: 500px;
 }
@@ -106,8 +102,12 @@ img {
   margin: 0 2px;
   background-color: white;
   border-radius: 50%;
-  display: inline-block;
   transition: background-color 0.6s ease;
+}
+.position-dot{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .active {
   background-color:rgb(234, 190, 113);
@@ -128,13 +128,25 @@ img {
   to {opacity: 1}
 }
 .diagram{
-  margin-top: 70px;
+  margin-top: 100px;
   display: flex;
   justify-content: center;
 }
 .chart{
   width: 100%;
   max-width: 600px;
+}
+.selector-country{
+  margin-bottom: 50px;
+}
+.selector-button{
+  color: rgb(195, 138, 55);
+  border-radius: 15px;
+  margin-left: 5px;
+}
+.selector-label{
+  color: #db884d;
+  margin-left: 10px;
 }
 .news-table{
   margin-top: 100px;
@@ -177,6 +189,26 @@ tr:nth-child(even) {
   text-align: center;
   background-color: white;
   color: rgb(195, 138, 55);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.col-container {
+  display: table;
+  width: 100%;
+}
+.col {
+  display: table-cell;
+  padding: 16px;
+}
+.position-card{
+  width: 100%;/*whatever size you want your container*/
+  display: flex; /*Make sure to call this on your container*/
+  align-items: stretch; /*stretches all cards same height*/
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;  
 }
 .footer-list{
   display: flex;
@@ -212,12 +244,43 @@ tr:nth-child(even) {
 .footer-input{
   border-radius: 5px;
   color: salmon;
+  margin-bottom: 15px;
 }
 .footer-icon{
   width: 50px;
   margin-top: 30px;
 }
-@media (max-width: 800px) {
+@media (max-width: 1500px){
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgb(195, 138, 55);
+    padding: 16px;
+    text-align: center;
+    background-color: white;
+    color: rgb(195, 138, 55);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .col-container {
+    display: table;
+    width: 100%;
+  }
+  .col {
+    display: table-cell;
+    padding: 16px;
+  }
+  .position-card{
+    width: 100%;/*whatever size you want your container*/
+    display: flex; /*Make sure to call this on your container*/
+    align-items: stretch; /*stretches all cards same height*/
+    flex-direction: column;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;  
+  }
+}
+@media (max-width: 600px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
@@ -244,11 +307,7 @@ tr:nth-child(even) {
   }
   .slider-img{
     width: 100%;
-    height: 500px;
-  }
-  .slider-img-word{
-    width: 100%;
-    height: 500px;
+    height: 450px;
   }
   .news-table{
     margin-left: 10px;
@@ -298,5 +357,20 @@ tr:nth-child(even) {
     }
     .diagram{
       margin-top: 70px;
+    }
+  }
+  @media screen and (max-width: 1100px) {
+    .brand-title {
+      font-size: 1.1rem;
+      margin: .5rem;
+    }
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+    .slider-img{
+      width: 90%;
+      height: 500px;
     }
   }
